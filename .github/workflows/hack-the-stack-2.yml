@@ -17,7 +17,7 @@ jobs:
         environment: [test, staging, production]
     name: ${{ matrix.os }} ${{ matrix.version }} ${{ matrix.environment }}
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 120
     steps:
     - name: Build
       run: |
