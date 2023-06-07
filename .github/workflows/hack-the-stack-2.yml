@@ -5,8 +5,9 @@ on:
     - cron: 59 */2 * * *
   workflow_dispatch:
 
-permissions:
-  contents: read
+concurrency: 
+  group: main
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -17,7 +18,6 @@ jobs:
         environment: [test, staging, production]
     name: ${{ matrix.os }} ${{ matrix.version }} ${{ matrix.environment }}
     runs-on: ubuntu-latest
-    timeout-minutes: 120
     steps:
     - name: Build
       run: |
