@@ -16,7 +16,8 @@ jobs:
         os: [ubuntu-latest]
         version: [12, 14, 16, 18]
         environment: [dev, test, staging, production]
-    name: ${{ matrix.os }} ${{ matrix.version }} ${{ matrix.environment }}
+        lang: [python, js]
+    name: ${{ matrix.os }} ${{ matrix.version }} ${{ matrix.environment }} ${{ matrix.lang }}
     runs-on: ubuntu-latest
     steps:
     - name: Build
