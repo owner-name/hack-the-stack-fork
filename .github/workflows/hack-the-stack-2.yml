@@ -13,11 +13,10 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest]
         version: [12, 14, 16, 18]
-        environment: [dev, test, staging, production]
-        lang: [python, js]
-    name: ${{ matrix.os }} ${{ matrix.version }} ${{ matrix.environment }} ${{ matrix.lang }}
+        environment: [test, staging, production]
+    name: ${{ matrix.os }} ${{ matrix.version }} ${{ matrix.environment }}
     runs-on: ubuntu-latest
     steps:
     - name: Build
