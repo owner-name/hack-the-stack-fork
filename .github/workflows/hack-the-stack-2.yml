@@ -13,9 +13,9 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
-        version: [12, 14, 16]
-        environment: [test, staging, production]
+        os: [ubuntu-latest]
+        version: [12, 14, 16, 18]
+        environment: [dev, test, staging, production]
     name: ${{ matrix.os }} ${{ matrix.version }} ${{ matrix.environment }}
     runs-on: ubuntu-latest
     steps:
